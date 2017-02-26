@@ -1,9 +1,18 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var shurli = require('./lib/shurli');
+var config = require('./config');
 var app = express();
 
-mongoose.connect('mongodb://localhost/shurli');
+mongoose.connect(config.mongo_url);
+
+app.set('view engine', 'pug');
+
+app.get('/', function(req, res) {
+  res.render('index', {
+    app_url: config.app_url
+  });
+});
 
 app.get('/new/*', function(req, res) {
   var url = req.url.split('/new/')[1];

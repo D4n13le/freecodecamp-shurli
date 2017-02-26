@@ -1,0 +1,35 @@
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title URL Shortener Microservice
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='description', content='URL Shortener Microservice')
+    meta(name='author', content='D4n13le')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+    link(rel='stylesheet prefetch', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+  body
+    .container-fluid
+      h1.header FreeCodeCamp API Basejump: URL Shortener Microservice
+      blockquote
+        p User stories:
+        ul
+          li
+            | I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
+          li
+            | When I visit that shortened URL, it will redirect me to my original link.
+      h3 Example creation usage:
+      |
+      code #{app_url}new/https://www.google.com
+      br
+      code #{app_url}new/http://foo.com:80
+      h3 Example creation output
+      |
+      code
+        | { &quot;original_url&quot;:&quot;http://foo.com:80&quot;, &quot;short_url&quot;:&quot;#{app_url}8170&quot; }
+      h3 Usage:
+      |
+      code #{app_url}2871
+      h3 Will redirect to:
+      |
+      code https://www.google.com
